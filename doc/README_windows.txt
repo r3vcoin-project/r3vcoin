@@ -1,4 +1,4 @@
-R3VCoin Core 0.14.6
+R3VCoin Core 1.1.0
 =====================
 
 Intro
