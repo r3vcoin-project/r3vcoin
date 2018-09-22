@@ -271,8 +271,8 @@ public:
         };
 
         modifierCheckpointData = (CModifierCheckpointData) {
-            /*boost::assign::map_list_of
-            (   0, 0xfd11f4e7 )*/
+            boost::assign::map_list_of
+            (   0, 0xfd11f4e7 )
         };
     }
 };
@@ -348,8 +348,8 @@ public:
         };
 
         modifierCheckpointData = (CModifierCheckpointData) {
-            /*boost::assign::map_list_of
-            (   0, 0xfd11f4e7 )*/
+            boost::assign::map_list_of
+            (   0, 0xfd11f4e7 )
         };
         
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
