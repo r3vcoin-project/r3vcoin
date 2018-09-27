@@ -3198,11 +3198,14 @@ bool CWallet::SignBlock(CBlock *pblock, int64_t nFees)
     {
         nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
         
-        if (fDebug)
+        if (fDebug) {
             LogPrintf("SignBlock : about to create coinstake: nFees=%ld\n", nFees);
+        }
         if (CreateCoinStake(pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, nFees, txCoinStake, key))
         {
-            LogPrintf("SignBlock : coinstake created: nFees=%ld\n", nFees);
+            if (fDebug) {
+                LogPrintf("SignBlock : coinstake created: nFees=%ld\n", nFees);
+            }
             CTransaction ctx(txCoinStake);
             if (txCoinStake.nTime >= max(pindexBest->GetMedianTimePast()+1, PastDrift(pindexBest->GetBlockTime())))
             {

@@ -380,28 +380,29 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlockHeader& blockFrom, uns
     ss << nTimeBlockFrom << nTxPrevOffset << nTimeTxPrev << prevout.n << nTimeTx;
     hashProofOfStake = ss.GetHash();
 
-    /*if (fPrintProofOfStake)
-    {
-        LogPrintf("CheckStakeKernelHash() : using modifier 0x%016x at height=%d timestamp=%s for block from height=%d timestamp=%s txid=%s\n",
-            nStakeModifier, nStakeModifierHeight,
-            DateTimeStrFormat(nStakeModifierTime).c_str(),
-            mapBlockIndex[hashBlockFrom]->nHeight,
-            DateTimeStrFormat(blockFrom.GetBlockTime()).c_str(),
-            tx_prev.GetHash().ToString());
-        LogPrintf("CheckStakeKernelHash() : check modifier=0x%016x nTimeBlockFrom=%u nTxPrevOffset=%u nTimeTxPrev=%u nPrevout=%u nTimeTx=%u hashProof=%s(0x%x) targetProof=%s(0x%x)\n",
-            nStakeModifier,
-            nTimeBlockFrom, nTxPrevOffset, nTimeTxPrev, prevout.n, nTimeTx,
-            hashProofOfStake.ToString(), UintToArith256(hashProofOfStake).getdouble(), 
-            targetProofOfStake.ToString(), UintToArith256(targetProofOfStake).getdouble());
-        LogPrintf("CheckStakeKernelHash() : check nBits=0x%016x nValueIn=%u nCoinAgeWeight=%u bnCoinDayWeight=0x%x bnTargetPerCoinDay=0x%x\n",
-            nBits,
-            nValueIn, nCoinAgeWeight,
-            bnCoinDayWeight.getdouble(),
-            bnTargetPerCoinDay.getdouble());
-    }*/
-
     // Now check if proof-of-stake hash meets target protocol
     if (UintToArith256(hashProofOfStake) > UintToArith256(targetProofOfStake)) {
+        
+        /*if (fPrintProofOfStake)
+        {
+            LogPrintf("CheckStakeKernelHash() : using modifier 0x%016x at height=%d timestamp=%s for block from height=%d timestamp=%s txid=%s\n",
+                nStakeModifier, nStakeModifierHeight,
+                DateTimeStrFormat(nStakeModifierTime).c_str(),
+                mapBlockIndex[hashBlockFrom]->nHeight,
+                DateTimeStrFormat(blockFrom.GetBlockTime()).c_str(),
+                tx_prev.GetHash().ToString());
+            LogPrintf("CheckStakeKernelHash() : check modifier=0x%016x nTimeBlockFrom=%u nTxPrevOffset=%u nTimeTxPrev=%u nPrevout=%u nTimeTx=%u hashProof=%s(0x%x) targetProof=%s(0x%x)\n",
+                nStakeModifier,
+                nTimeBlockFrom, nTxPrevOffset, nTimeTxPrev, prevout.n, nTimeTx,
+                hashProofOfStake.ToString(), UintToArith256(hashProofOfStake).getdouble(), 
+                targetProofOfStake.ToString(), UintToArith256(targetProofOfStake).getdouble());
+            LogPrintf("CheckStakeKernelHash() : check nBits=0x%016x nValueIn=%u nCoinAgeWeight=%u bnCoinDayWeight=0x%x bnTargetPerCoinDay=0x%x\n",
+                nBits,
+                nValueIn, nCoinAgeWeight,
+                bnCoinDayWeight.getdouble(),
+                bnTargetPerCoinDay.getdouble());
+        }*/
+
         return false;
     } else {
         //LogPrintf("CheckStakeKernelHash() : OK\n");

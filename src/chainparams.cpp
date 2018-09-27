@@ -97,10 +97,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000004ccf8537a90");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x5528598a22acf18f002c85d978bf49ebd0705335e9c44a980bfc64c77960f027"); //0
+        consensus.defaultAssumeValid = uint256S("0x449d6f031d16cc51ef16f6366c8234d5eb2dc0108964728a4a468d6066b78b15"); //0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -127,7 +127,9 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x824c1546fb368646e2630c658e4d3c4f3a59f1687534afe7e30fa8f20785dbba"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("r3vcoin.org", "seed.r3vcoin.org"));
+        //vSeeds.push_back(CDNSSeedData("r3vcoin.org", "seed.r3vcoin.org"));
+        vSeeds.push_back(CDNSSeedData("35.187.198.226", "35.187.198.226"));
+        vSeeds.push_back(CDNSSeedData("35.240.133.230", "35.240.133.230"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,60);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -145,15 +147,18 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x5528598a22acf18f002c85d978bf49ebd0705335e9c44a980bfc64c77960f027"))
-            (  4, uint256S("0x59da4eb38b47ce0a6af2a5c7332d90b27073708251726e43f2dab82ad5e3a39f"))
-            (  8, uint256S("0x4f1f5b031289376270e1ba8e12be10fe58ec3afbe7f0e0fcbbd391bb4de1c6e7"))
-            ( 16, uint256S("0x1a88637dc68fee32aefa6337daec89202b5aec99aa9e0fe52728a8ae96c4927c"))
-            ( 32, uint256S("0xc4892a0642252e490556ffc142846aebd902da2bf50c443177f565f9903f33b9"))
-            ( 64, uint256S("0xd4c00492bef3a34b75718866f0127bf766fac5cc449a5877602f0d1702c67616"))
-            (128, uint256S("0x4d32de61bdd03153978b52726190767b2c6896b74226eca26c69d900a0b4a515"))
-            (256, uint256S("0x1ac64ff236c8e07f6d513373c0bcbb481e50f9889f754f6eafea0f8a7c0c5ab6"))
-            (512, uint256S("0xf97bb54b2427a50d49057894486009e31d71b0452478246ff0539eb965e8b326"))
+            (   0, uint256S("0x5528598a22acf18f002c85d978bf49ebd0705335e9c44a980bfc64c77960f027"))
+            (   4, uint256S("0x59da4eb38b47ce0a6af2a5c7332d90b27073708251726e43f2dab82ad5e3a39f"))
+            (   8, uint256S("0x4f1f5b031289376270e1ba8e12be10fe58ec3afbe7f0e0fcbbd391bb4de1c6e7"))
+            (  16, uint256S("0x1a88637dc68fee32aefa6337daec89202b5aec99aa9e0fe52728a8ae96c4927c"))
+            (  32, uint256S("0xc4892a0642252e490556ffc142846aebd902da2bf50c443177f565f9903f33b9"))
+            (  64, uint256S("0xd4c00492bef3a34b75718866f0127bf766fac5cc449a5877602f0d1702c67616"))
+            ( 128, uint256S("0x4d32de61bdd03153978b52726190767b2c6896b74226eca26c69d900a0b4a515"))
+            ( 256, uint256S("0x1ac64ff236c8e07f6d513373c0bcbb481e50f9889f754f6eafea0f8a7c0c5ab6"))
+            ( 512, uint256S("0xf97bb54b2427a50d49057894486009e31d71b0452478246ff0539eb965e8b326"))
+            (1024, uint256S("0xc61970ef42ed568e38249c4fcbda0ae35efcefeefddade7c234b1dac6641d0f9"))
+            (2048, uint256S("0x0da85120ccd16acb9bacf2c8fdfc308109e9b002f745f8df77d93643741f4d57"))
+            (4096, uint256S("0x449d6f031d16cc51ef16f6366c8234d5eb2dc0108964728a4a468d6066b78b15"))
         };
 
         chainTxData = ChainTxData{
@@ -162,7 +167,7 @@ public:
             //121,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             //0.00007 = 121 / (1516328121 - 1514764800)    // * estimated number of transactions per second after that timestamp
-            1537525987,
+            1537961844,
             1,
             0.01667 // 1 transaction per block per 60 seconds
         };
