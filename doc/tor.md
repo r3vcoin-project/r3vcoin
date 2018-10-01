@@ -42,11 +42,11 @@ reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equiv
 config file):
 
 	HiddenServiceDir /var/lib/tor/r3vcoin-service/
-	HiddenServicePort 14843 127.0.0.1:14843
+	HiddenServicePort 13843 127.0.0.1:13843
 	HiddenServicePort 15843 127.0.0.1:15843
 
 The directory can be different of course, but (both) port numbers should be equal to
-your r3vcoind's P2P listen port (14843 by default).
+your r3vcoind's P2P listen port (13843 by default).
 
 	-externalip=X   You can tell r3vcoin about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
@@ -81,7 +81,7 @@ as well, use `discover` instead:
 
 	./r3vcoind ... -discover
 
-and open port 14843 on your firewall (or use -upnp).
+and open port 13843 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:

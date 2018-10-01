@@ -59,11 +59,11 @@ bool fWalletUnlockStakingOnly = false;
 unsigned int nStakeSplitAge = 45 * 24 * 60 * 60; // 45 days
 
 // avoid concentrated transactions. on average, each block contains:
-// generated interest  ~= 333m * 20% / 365 / 1440 ~= 126
-// corresponding stake ~= 333m / 365 / 1440 ~= 633
-// optimally each output stakes once every week so 633 * 52 = 33k
+// generated interest  ~= 3333m * 0% / 365 / 1440 ~= 0
+// corresponding stake ~= 3333m / 365 / 1440 ~= 6341
+// optimally each output stakes once every week so 633 * 52 = 330k
 // but only a fraction of the total money supply is staked on the network
-int64_t nStakeCombineThreshold = 40000 * COIN;
+int64_t nStakeCombineThreshold = 400000 * COIN;
 
 
 /**

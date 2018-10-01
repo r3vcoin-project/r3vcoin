@@ -1,4 +1,4 @@
-R3VCoin Core version 1.1.0 is now available from:
+R3VCoin Core version 1.2.0 is now available from:
 
   <https://r3vcoin.org/downloads/>
 

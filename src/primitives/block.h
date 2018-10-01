@@ -13,7 +13,7 @@
 #include "util.h"
 
 /** Start checking POW after block 200 */
-static const int64_t CHECK_POW_FROM_NTIME = 1537439390;
+static const int64_t CHECK_POW_FROM_NTIME = 1538130357;
 static const int POW_BLOCK_VERSION = 2;
 
 /** Nodes collect new transactions into a block, hash them into a hash tree,
