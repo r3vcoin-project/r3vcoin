@@ -1200,7 +1200,7 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
     if (nHeight >= 1 && nHeight <= 200) {
-        return 1665000 * COIN;
+        return 16665000 * COIN;
     } else {
         return 0;
     }
@@ -2048,7 +2048,6 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         pindex->prevoutStake = block.vtx[1]->vin[0].prevout;
         pindex->nStakeTime = block.vtx[1]->nTime;
         if (!fJustCheck && !setStakeSeen.count(block.GetProofOfStake())) {
-            LogPrintf("ConnectBlock: setStakeSeen\n");
             setStakeSeen.insert(std::make_pair(pindex->prevoutStake, pindex->nStakeTime));
         }
     }
