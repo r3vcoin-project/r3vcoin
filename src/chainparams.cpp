@@ -97,10 +97,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000217bb877f03");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000008596f6a45e4");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xe2e3af84c05f0f9f0932fc634ccf75001655721cc9ed566c7db0f18f4fe04657"); //1024
+        consensus.defaultAssumeValid = uint256S("0x3e804157591e93368321430a528ec56c10fb39a83a73d4d55f5860806d77b2b4"); //2048
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -127,9 +127,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xe34480b213a07b15a4390f71e038a636ac5ea5269cb7ac05e98e2902aaac2261"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        //vSeeds.push_back(CDNSSeedData("r3vcoin.org", "seed.r3vcoin.org"));
-        vSeeds.push_back(CDNSSeedData("35.187.198.226", "35.187.198.226"));
-        vSeeds.push_back(CDNSSeedData("35.240.133.230", "35.240.133.230"));
+        vSeeds.push_back(CDNSSeedData("sg.seed.r3v.co", "sg.seed.r3v.co"));
+        vSeeds.push_back(CDNSSeedData("jp.seed.r3v.co", "jp.seed.r3v.co"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,60);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -157,6 +156,7 @@ public:
             ( 256, uint256S("0xe11bc0ae0cb2e7492d46d7aae962190d4638ac4b166050ec16a442d144360a58"))
             ( 512, uint256S("0x542b430da6db69e0eca35141d60bfea8ca7caf841c4122e0f32e6c87ba0efe1d"))
             (1024, uint256S("0xe2e3af84c05f0f9f0932fc634ccf75001655721cc9ed566c7db0f18f4fe04657"))
+            (2048, uint256S("0x3e804157591e93368321430a528ec56c10fb39a83a73d4d55f5860806d77b2b4"))
         };
 
         chainTxData = ChainTxData{
@@ -165,7 +165,7 @@ public:
             //121,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             //0.00007 = 121 / (1516328121 - 1514764800)    // * estimated number of transactions per second after that timestamp
-            1538192114,
+            1538390005,
             1,
             0.01667 // 1 transaction per block per 60 seconds
         };
