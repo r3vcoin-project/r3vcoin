@@ -508,7 +508,7 @@ std::string HelpMessage(HelpMessageMode mode)
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/r3vcoin-project/r3vcoin>";
-    const std::string URL_WEBSITE = "<https://r3vcoin.org>";
+    const std::string URL_WEBSITE = "<https://r3v.co>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

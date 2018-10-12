@@ -1,6 +1,6 @@
 R3V Coin Core version 1.2.2 is now available from:
 
-  <https://r3vcoin.org/downloads/>
+  <https://r3v.co/downloads/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -51,9 +51,6 @@ Reset Testnet
 
 Testnet3 has been deprecated and replaced with Testnet4. The server port has been changed to 15843 however the RPC port remains
 the same (15844).
-
-Testnet faucets can be located at:
-- http://testnet.r3vcoin.org
 
 Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/r3vcoin-project/r3vcoin/blob/master/src/chainparams.cpp#L220).
 

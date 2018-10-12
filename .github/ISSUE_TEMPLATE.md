@@ -2,9 +2,9 @@
 
 This issue tracker is only for technical issues related to r3vcoin-core.
 
-General r3vcoin questions and/or support requests and are best directed to the [r3vcointalk.io forums](https://r3vcointalk.io/).
+General r3vcoin questions and/or support requests and are best directed to the [r3v.co](https://r3v.co/).
 
-For reporting security issues, please contact the R3VCoin developers on the #r3vcoin-dev Freenode IRC channel or alternatively you can email us at contact@r3vcoin.org.
+For reporting security issues, please contact the R3VCoin developers on the #r3vcoin-dev Freenode IRC channel or alternatively you can email us at support@r3v.co.
 
 ### Describe the issue
 

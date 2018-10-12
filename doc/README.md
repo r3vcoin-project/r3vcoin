@@ -5,7 +5,7 @@ Setup
 ---------------------
 R3V Coin Core is the original R3VCoin client and it builds the backbone of the network. However, it downloads and stores the entire history of R3VCoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download R3V Coin Core, visit [r3vcoin.org](https://r3vcoin.org).
+To download R3V Coin Core, visit [r3v.co](https://r3v.co).
 
 Running
 ---------------------
@@ -28,7 +28,7 @@ Drag R3VCoin-Core to your applications folder, and then run R3VCoin-Core.
 
 ### Need Help?
 
-* See the documentation at the [R3VCoin Wiki](https://r3vcoin.info/)
+* See the documentation at the [R3VCoin Wiki](https://r3v.co/)
 for help and more information.
 * Ask for help on [#r3vcoin](http://webchat.freenode.net?channels=r3vcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=r3vcoin).
 * Ask for help on the [R3VCoinTalk](https://r3vcointalk.io/) forums.
