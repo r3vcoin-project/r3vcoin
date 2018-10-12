@@ -1,4 +1,4 @@
-R3VCoin Core 1.2.0
+R3VCoin Core 1.2.1
 =====================
 
 Setup
