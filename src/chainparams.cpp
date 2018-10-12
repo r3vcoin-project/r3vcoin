@@ -97,10 +97,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000008596f6a45e4");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000001ead1cf90ca0e");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x3e804157591e93368321430a528ec56c10fb39a83a73d4d55f5860806d77b2b4"); //2048
+        consensus.defaultAssumeValid = uint256S("0xa69d95c81f2a6eaa4005ebc1905e2cd77f8ebbac2ec3c59992b958c13eb1d1ea"); //13369
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -157,6 +157,8 @@ public:
             ( 512, uint256S("0x542b430da6db69e0eca35141d60bfea8ca7caf841c4122e0f32e6c87ba0efe1d"))
             (1024, uint256S("0xe2e3af84c05f0f9f0932fc634ccf75001655721cc9ed566c7db0f18f4fe04657"))
             (2048, uint256S("0x3e804157591e93368321430a528ec56c10fb39a83a73d4d55f5860806d77b2b4"))
+            (4096, uint256S("0xeb43690c3ba5b21c5905e01663faf7cf5ceaf7a1f3d980fdd41f932ea60947a2"))
+            (8192, uint256S("0x5f6d52156a1fda768ab6e31c0d6c5148885ffc55fb14267a6f4c35182c775dd5"))
         };
 
         chainTxData = ChainTxData{
@@ -165,21 +167,27 @@ public:
             //121,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             //0.00007 = 121 / (1516328121 - 1514764800)    // * estimated number of transactions per second after that timestamp
-            1538390005,
+            1539070550,
             1,
             0.01667 // 1 transaction per block per 60 seconds
         };
         
         modifierCheckpointData = (CModifierCheckpointData) {
             boost::assign::map_list_of
-                (   0, 0x000000000faf9118 )
-                /*(   2, 0x00000000cd14ad17 )
-                (   4, 0x000000005e457b8c )
-                (   8, 0x0000000020d15062 )
-                (  16, 0x00000000c81b07fd )
-                (  32, 0x00000000a6b45aaf )
-                (  64, 0x000000003615e454 )
-                ( 128, 0x00000000c4946fdc )*/
+                (    0, uint64_t(0x0faf9118) )
+                /*(    2, 0xcd14ad17 )
+                (    4, 0x5e457b8c )
+                (    8, 0xa2748ec7 )
+                (   16, 0x9616e10f )
+                (   32, 0x3156039f )
+                (   64, 0xc283f40b )
+                (  128, 0x43fbad93 )
+                (  256, 0x47750cce )
+                (  512, 0xc1be8d21 )
+                ( 1024, 0xafea7ca5 )
+                ( 2048, 0x5f290305 )
+                ( 4096, 0x77adbfd7 )
+                ( 8192, 0x77f0fcd0 )*/
         };
 
     }

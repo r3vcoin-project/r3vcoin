@@ -139,7 +139,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, uint64_t Ta
         LogPrintf("After:  %08x  %s %u\n", bnNew.GetCompact(), ArithToUint256(bnNew).ToString(), bnNew.getdouble());
     }
 
-     return bnNew.GetCompact();
+    return bnNew.GetCompact();
 }
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus::Params& params)

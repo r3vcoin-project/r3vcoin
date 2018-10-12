@@ -772,7 +772,7 @@
 </translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
+        <source>R3V Coin Core</source>
         <translation>r3vcoin core</translation>
     </message>
     <message>

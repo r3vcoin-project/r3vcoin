@@ -29,7 +29,7 @@ for Debian-based Linux systems. If you compile r3vcoind/r3vcoin-qt yourself, the
 Notes on getting Gitian builds up and running using KVM.
 
 ### [Gitian-keys](/contrib/gitian-keys)
-PGP keys used for signing R3VCoin Core [Gitian release](/doc/release-process.md) results.
+PGP keys used for signing R3V Coin Core [Gitian release](/doc/release-process.md) results.
 
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds. 

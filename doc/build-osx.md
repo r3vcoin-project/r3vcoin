@@ -24,7 +24,7 @@ In case you want to build the disk image with `make deploy` (.dmg / optional), y
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build R3VCoin Core
+Build R3V Coin Core
 ------------------------
 
 1. Clone the r3vcoin source code and cd into `r3vcoin`
@@ -53,7 +53,7 @@ Build R3VCoin Core
 Running
 -------
 
-R3VCoin Core is now available at `./src/r3vcoind`
+R3V Coin Core is now available at `./src/r3vcoind`
 
 Before running, it's recommended you create an RPC configuration file.
 

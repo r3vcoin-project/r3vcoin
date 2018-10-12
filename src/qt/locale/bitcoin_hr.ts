@@ -1034,8 +1034,8 @@
         <translation>Izvršavaj u pozadini kao uslužnik i prihvaćaj komande</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
-        <translation>R3VCoin Core</translation>
+        <source>R3V Coin Core</source>
+        <translation>R3V Coin Core</translation>
     </message>
     <message>
         <source>Block creation options:</source>
