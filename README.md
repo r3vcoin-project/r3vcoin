@@ -3,7 +3,7 @@ R3V Coin Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/r3vcoin-project/r3vcoin.svg?branch=master)](https://travis-ci.org/r3vcoin-project/r3vcoin)
 
-https://r3vcoin.org
+https://r3v.co
 
 What is R3VCoin?
 ----------------
@@ -15,7 +15,7 @@ out collectively by the network. R3V Coin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the R3V Coin Core software, see [https://r3vcoin.org](https://r3vcoin.org).
+the R3V Coin Core software, see [https://r3v.co](https://r3v.co).
 
 License
 -------

@@ -49,7 +49,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "R3VCoin"
-#define QAPP_ORG_DOMAIN "r3vcoin.org"
+#define QAPP_ORG_DOMAIN "r3v.co"
 #define QAPP_APP_NAME_DEFAULT "R3VCoin-Qt"
 #define QAPP_APP_NAME_TESTNET "R3VCoin-Qt-testnet"
 
