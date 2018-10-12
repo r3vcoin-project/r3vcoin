@@ -784,7 +784,7 @@
         <translation>Opsionet:</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
+        <source>R3V Coin Core</source>
         <translation>Berthama R3VCoin</translation>
     </message>
     <message>

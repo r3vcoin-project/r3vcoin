@@ -2487,7 +2487,7 @@ Zwróć uwagę, że poprawnie zweryfikowana wiadomość potwierdza to, że nadaw
         <translation>Uruchomienie serwera HTTP nie powiodło się. Zobacz dziennik debugowania, aby uzyskać więcej szczegółów.</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
+        <source>R3V Coin Core</source>
         <translation>Rdzeń R3VCoina</translation>
     </message>
     <message>

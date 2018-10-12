@@ -451,8 +451,8 @@
     <message>
         <location line="+166"/>
         <location line="+5"/>
-        <source>R3VCoin Core client</source>
-        <translation>R3VCoin Core client</translation>
+        <source>R3V Coin Core client</source>
+        <translation>R3V Coin Core client</translation>
     </message>
     <message>
         <location line="+359"/>
@@ -4070,8 +4070,8 @@
     </message>
     <message>
         <location line="-360"/>
-        <source>R3VCoin Core</source>
-        <translation type="unfinished">R3VCoin Core</translation>
+        <source>R3V Coin Core</source>
+        <translation type="unfinished">R3V Coin Core</translation>
     </message>
     <message>
         <location line="+1"/>

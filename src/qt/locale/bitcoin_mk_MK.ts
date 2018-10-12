@@ -578,7 +578,7 @@
         <translation>Опции:</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
+        <source>R3V Coin Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>

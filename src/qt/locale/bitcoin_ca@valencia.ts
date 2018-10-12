@@ -2558,8 +2558,8 @@
         <translation>Executa en segon pla com a programa dimoni i accepta ordes</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
-        <translation>R3VCoin Core</translation>
+        <source>R3V Coin Core</source>
+        <translation>R3V Coin Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

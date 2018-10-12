@@ -1676,8 +1676,8 @@
         <translation>Berjalan dibelakang sebagai daemin dan menerima perintah</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
-        <translation>R3VCoin Core</translation>
+        <source>R3V Coin Core</source>
+        <translation>R3V Coin Core</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>

@@ -2183,8 +2183,8 @@
         <translation>Não é possível iniciar o servidor HTTP. Verifique o debug.log para detalhes.</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
-        <translation>R3VCoin Core</translation>
+        <source>R3V Coin Core</source>
+        <translation>R3V Coin Core</translation>
     </message>
     <message>
         <source>A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)</source>

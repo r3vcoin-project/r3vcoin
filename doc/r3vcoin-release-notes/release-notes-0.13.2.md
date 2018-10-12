@@ -1,4 +1,4 @@
-R3VCoin Core version 0.13.2 is now available from:
+R3V Coin Core version 0.13.2 is now available from:
 
   <https://download.r3vcoin.org/r3vcoin-0.13.2.1/>
 
@@ -88,15 +88,15 @@ can often prevent an extra roundtrip before the actual block is downloaded.
 Memory pool limiting
 --------------------
 
-Previous versions of R3VCoin Core had their mempool limited by checking
+Previous versions of R3V Coin Core had their mempool limited by checking
 a transaction's fees against the node's minimum relay fee. There was no
 upper bound on the size of the mempool and attackers could send a large
 number of transactions paying just slighly more than the default minimum
 relay fee to crash nodes with relatively low RAM. A temporary workaround
-for previous versions of R3VCoin Core was to raise the default minimum
+for previous versions of R3V Coin Core was to raise the default minimum
 relay fee.
 
-R3VCoin Core 0.13.2 will have a strict maximum size on the mempool. The
+R3V Coin Core 0.13.2 will have a strict maximum size on the mempool. The
 default value is 300 MB and can be configured with the `-maxmempool`
 parameter. Whenever a transaction would cause the mempool to exceed
 its maximum size, the transaction that (along with in-mempool descendants) has
@@ -105,7 +105,7 @@ minimum relay feerate will be increased to match this feerate plus the initial
 minimum relay feerate. The initial minimum relay feerate is set to
 1000 satoshis per kB.
 
-R3VCoin Core 0.13.2 also introduces new default policy limits on the length and
+R3V Coin Core 0.13.2 also introduces new default policy limits on the length and
 size of unconfirmed transaction chains that are allowed in the mempool
 (generally limiting the length of unconfirmed chains to 25 transactions, with a
 total size of 101 KB).  These limits can be overriden using command line
@@ -147,10 +147,10 @@ returned (previously all relevant hashes were returned).
 Relay and Mining: Priority transactions
 ---------------------------------------
 
-R3VCoin Core has a heuristic 'priority' based on coin value and age. This
+R3V Coin Core has a heuristic 'priority' based on coin value and age. This
 calculation is used for relaying of transactions which do not pay the
 minimum relay fee, and can be used as an alternative way of sorting
-transactions for mined blocks. R3VCoin Core will relay transactions with
+transactions for mined blocks. R3V Coin Core will relay transactions with
 insufficient fees depending on the setting of `-limitfreerelay=<r>` (default:
 `r=15` kB per minute) and `-blockprioritysize=<s>`.
 
@@ -175,7 +175,7 @@ Note, however, that if mining priority transactions is left disabled, the
 priority delta will be ignored and only the fee metric will be effective.
 
 This internal automatic prioritization handling is being considered for removal
-entirely in R3VCoin Core 0.13, and it is at this time undecided whether the
+entirely in R3V Coin Core 0.13, and it is at this time undecided whether the
 more accurate priority calculation for chained unconfirmed transactions will be
 restored. Community direction on this topic is particularly requested to help
 set project priorities.
@@ -185,15 +185,15 @@ Automatically use Tor hidden services
 
 Starting with Tor version 0.2.7.1 it is possible, through Tor's control socket
 API, to create and destroy 'ephemeral' hidden services programmatically.
-R3VCoin Core has been updated to make use of this.
+R3V Coin Core has been updated to make use of this.
 
 This means that if Tor is running (and proper authorization is available),
-R3VCoin Core automatically creates a hidden service to listen on, without
-manual configuration. R3VCoin Core will also use Tor automatically to connect
+R3V Coin Core automatically creates a hidden service to listen on, without
+manual configuration. R3V Coin Core will also use Tor automatically to connect
 to other .onion nodes if the control socket can be successfully opened. This
 will positively affect the number of available .onion nodes and their usage.
 
-This new feature is enabled by default if R3VCoin Core is listening, and
+This new feature is enabled by default if R3V Coin Core is listening, and
 a connection to Tor can be made. It can be configured with the `-listenonion`,
 `-torcontrol` and `-torpassword` settings. To show verbose debugging
 information, pass `-debug=tor`.
@@ -215,7 +215,7 @@ transaction fees.
 
 Users can decide to pay a predefined fee rate by setting `-paytxfee=<n>`
 (or `settxfee <n>` rpc during runtime). A value of `n=0` signals R3VCoin
-Core to use floating fees. By default, R3VCoin Core will use floating
+Core to use floating fees. By default, R3V Coin Core will use floating
 fees.
 
 Based on past transaction data, floating fees approximate the fees
@@ -226,9 +226,9 @@ Sometimes, it is not possible to give good estimates, or an estimate
 at all. Therefore, a fallback value can be set with `-fallbackfee=<f>`
 (default: `0.0002` R3V/kB).
 
-At all times, R3VCoin Core will cap fees at `-maxtxfee=<x>` (default:
+At all times, R3V Coin Core will cap fees at `-maxtxfee=<x>` (default:
 0.10) R3V.
-Furthermore, R3VCoin Core will never create transactions paying less than
+Furthermore, R3V Coin Core will never create transactions paying less than
 the current minimum relay fee.
 Finally, a user can set the minimum fee rate for all transactions with
 `-mintxfee=<i>`, which defaults to 1000 satoshis per kB.
@@ -443,7 +443,7 @@ table by any user on the system.
 C++11 and Python 3
 ------------------
 
-Various code modernizations have been done. The R3VCoin Core code base has
+Various code modernizations have been done. The R3V Coin Core code base has
 started using C++11. This means that a C++11-capable compiler is now needed for
 building. Effectively this means GCC 4.7 or higher, or Clang 3.3 or higher.
 
@@ -592,7 +592,7 @@ You can't disable HD key generation once you have created a HD wallet.
 
 There is no distinction between internal (change) and external keys.
 
-HD wallets are incompatible with older versions of R3VCoin Core.
+HD wallets are incompatible with older versions of R3V Coin Core.
 
 [Pull request](https://github.com/bitcoin/bitcoin/pull/8035/files), [BIP 32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 
@@ -861,13 +861,13 @@ covered by the txid. This provides several immediate benefits:
   (specifically, the segregated witnesses) while still ensuring that the node
   can build an accurate copy of the UTXO set for the block chain with the most
   proof of work.  Segwit enables this capability at the consensus layer, but
-  note that R3VCoin Core does not provide an option to use this capability as
+  note that R3V Coin Core does not provide an option to use this capability as
   of this 0.13.2 release.
 
 - **Script versioning:** Segwit makes it easy for future soft forks to allow
   R3VCoin users to individually opt-in to almost any change in the R3VCoin
   Script language when those users receive new transactions.  Features
-  currently being researched by Bitcoin and R3VCoin Core contributors that may
+  currently being researched by Bitcoin and R3V Coin Core contributors that may
   use this capability include support for Schnorr signatures, which can improve
   the privacy and efficiency of multisig transactions (or transactions with
   multiple inputs), and Merklized Abstract Syntax Trees (MAST), which can
@@ -878,7 +878,7 @@ covered by the txid. This provides several immediate benefits:
 Activation for the segwit soft fork is being managed using
 BIP9. At the beginning of the first retarget period after
 segwit's start date of 1 January 2017 miners can update the R3VCoin
-client to R3VCoin Core 0.13.2 to signal for segwit support. When a
+client to R3V Coin Core 0.13.2 to signal for segwit support. When a
 super-majority of 75% is reached segwit is activated by optional, and
 if 75% of blocks within a 8,064-block retarget period (about 3.5 days)
 signal support for segwit, after another 8,064 blocks, segwit will
@@ -911,7 +911,7 @@ a third-party to insert data into other people's transactions, changing
 the transaction's txid (called transaction malleability) and possibly
 causing other problems.
 
-Since R3VCoin Core 0.10.0, nodes have defaulted to only relaying and
+Since R3V Coin Core 0.10.0, nodes have defaulted to only relaying and
 mining transactions whose dummy element was a null value (0x00, also
 called OP_0).  The null dummy soft fork turns this relay rule into a
 consensus rule both for non-segwit transactions and segwit transactions,

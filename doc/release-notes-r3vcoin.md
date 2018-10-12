@@ -1,4 +1,4 @@
-R3VCoin Core version 1.2.1 is now available from:
+R3V Coin Core version 1.2.2 is now available from:
 
   <https://r3vcoin.org/downloads/>
 
@@ -16,7 +16,7 @@ To receive security and update notifications, please subscribe to:
 Compatibility
 ==============
 
-R3VCoin Core is extensively tested on multiple operating systems using
+R3V Coin Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
@@ -24,7 +24,7 @@ No attempt is made to prevent installing or running the software on Windows XP, 
 can still do so at your own risk but be aware that there are known instabilities and issues.
 Please do not report issues about Windows XP to the issue tracker.
 
-R3VCoin Core should also work on most other Unix-like systems but is not
+R3V Coin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -33,7 +33,7 @@ Notable changes
 New Multisig Address Prefix
 ---------------------------
 
-R3VCoin Core now supports P2SH addresses beginning with M on mainnet and Q on testnet.
+R3V Coin Core now supports P2SH addresses beginning with M on mainnet and Q on testnet.
 P2SH addresses beginning with 3 on mainnet and m or n on testnet will continue to be valid.
 Old and new addresses can be used interchangeably.
 
@@ -42,7 +42,7 @@ miniupnp CVE-2017-8798
 
 Bundled miniupnpc was updated to 2.0.20170509. This fixes an integer signedness error (present in MiniUPnPc v1.4.20101221 through v2.0) that allows remote attackers (within the LAN) to cause a denial of service or possibly have unspecified other impact.
 
-This only affects users that have explicitly enabled UPnP through the GUI setting or through the -upnp option, as since the last UPnP vulnerability (in R3VCoin Core 0.10.4) it has been disabled by default.
+This only affects users that have explicitly enabled UPnP through the GUI setting or through the -upnp option, as since the last UPnP vulnerability (in R3V Coin Core 0.10.4) it has been disabled by default.
 
 If you use this option, it is recommended to upgrade to this version as soon as possible.
 
@@ -82,7 +82,7 @@ improved, leading to much shorter sync and initial block download times.
 Manual Pruning
 --------------
 
-R3VCoin Core has supported automatically pruning the blockchain since 0.13.2. Pruning
+R3V Coin Core has supported automatically pruning the blockchain since 0.13.2. Pruning
 the blockchain allows for significant storage space savings as the vast majority of
 the downloaded data can be discarded after processing so very little of it remains
 on the disk.
@@ -156,7 +156,7 @@ the same thing as the GUI icon. The command takes one boolean parameter,
 Out-of-sync Modal Info Layer
 ----------------------------
 
-When R3VCoin Core is out-of-sync on startup, a semi-transparent information
+When R3V Coin Core is out-of-sync on startup, a semi-transparent information
 layer will be shown over top of the normal display. This layer contains
 details about the current sync progress and estimates the amount of time
 remaining to finish syncing. This layer can also be hidden and subsequently
@@ -208,7 +208,7 @@ commands such as `prioritisetransaction` so that those changes will not be lost.
 Final Alert
 -----------
 
-The Alert System was disabled and deprecated in R3VCoin Core 0.10.4 and removed in 0.13.2. 
+The Alert System was disabled and deprecated in R3V Coin Core 0.10.4 and removed in 0.13.2. 
 The Alert System was retired with a maximum sequence final alert which causes any nodes
 supporting the Alert System to display a static hard-coded "Alert Key Compromised" message which also
 prevents any other alerts from overriding it. This final alert is hard-coded into this release
@@ -260,7 +260,7 @@ Low-level RPC changes
    the mempool or if `txindex` is enabled.
 
  - A new RPC command `getmemoryinfo` has been added which will return information
-   about the memory usage of R3VCoin Core. This was added in conjunction with
+   about the memory usage of R3V Coin Core. This was added in conjunction with
    optimizations to memory management. See [Pull #8753](https://github.com/bitcoin/bitcoin/pull/8753)
    for more information.
 

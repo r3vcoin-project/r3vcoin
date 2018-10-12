@@ -3055,8 +3055,8 @@
         <translation>無法啟動 HTTP 伺服器。詳情請看除錯紀錄。</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
-        <translation>R3VCoin Core</translation>
+        <source>R3V Coin Core</source>
+        <translation>R3V Coin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

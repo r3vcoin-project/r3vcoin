@@ -1,4 +1,4 @@
-Fuzz-testing R3VCoin Core
+Fuzz-testing R3V Coin Core
 ==========================
 
 A special test harness `test_r3vcoin_fuzzy` is provided to provide an easy
@@ -20,7 +20,7 @@ export AFLPATH=$PWD
 Instrumentation
 ----------------
 
-To build R3VCoin Core using AFL instrumentation (this assumes that the
+To build R3V Coin Core using AFL instrumentation (this assumes that the
 `AFLPATH` was set as above):
 ```
 ./configure --disable-ccache --disable-shared --enable-tests CC=${AFLPATH}/afl-gcc CXX=${AFLPATH}/afl-g++

@@ -1,11 +1,11 @@
-R3VCoin Core 1.2.1
+R3V Coin Core 1.2.2
 =====================
 
 Setup
 ---------------------
-R3VCoin Core is the original R3VCoin client and it builds the backbone of the network. However, it downloads and stores the entire history of R3VCoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+R3V Coin Core is the original R3VCoin client and it builds the backbone of the network. However, it downloads and stores the entire history of R3VCoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download R3VCoin Core, visit [r3vcoin.org](https://r3vcoin.org).
+To download R3V Coin Core, visit [r3vcoin.org](https://r3vcoin.org).
 
 Running
 ---------------------

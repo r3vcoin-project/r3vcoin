@@ -768,7 +768,7 @@
         <translation>Operare infere sicut daemon et mandata accipe</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
+        <source>R3V Coin Core</source>
         <translation>R3VCoin Nucleus</translation>
     </message>
     <message>

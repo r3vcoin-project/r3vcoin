@@ -1778,7 +1778,7 @@
         <translation>HTTP-palvelinta ei voitu käynnistää. Katso debug-lokista lisätietoja.</translation>
     </message>
     <message>
-        <source>R3VCoin Core</source>
+        <source>R3V Coin Core</source>
         <translation>R3VCoin-ydin</translation>
     </message>
     <message>

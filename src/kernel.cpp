@@ -457,6 +457,7 @@ bool CheckCoinStakeTimestamp(int64_t nTimeBlock, int64_t nTimeTx)
 unsigned int GetStakeModifierChecksum(const CBlockIndex* pindex)
 {
     assert (pindex->pprev || pindex->GetBlockHash() == (Params().GetConsensus().hashGenesisBlock));
+
     // Hash previous checksum with flags, hashProofOfStake and nStakeModifier
     CDataStream ss(SER_GETHASH, 0);
     if (pindex->pprev)
@@ -478,7 +479,7 @@ unsigned int GetStakeModifierChecksum(const CBlockIndex* pindex)
 bool CheckStakeModifierCheckpoints(int nHeight, uint64_t nStakeModifierChecksum)
 {
     if (fDebug)
-        LogPrintf("CheckStakeModifierCheckpoints : nHeight=%d, nStakeModifierChecksum=0x%016x\n", nHeight, nStakeModifierChecksum);
+        LogPrintf("CheckStakeModifierCheckpoints : nHeight=%d, nStakeModifierChecksum=0x%jx %llu\n", nHeight, nStakeModifierChecksum, nStakeModifierChecksum);
 
     const CChainParams& chainparams = Params();
 
@@ -486,6 +487,10 @@ bool CheckStakeModifierCheckpoints(int nHeight, uint64_t nStakeModifierChecksum)
 
     std::map<int, uint64_t>::const_iterator it = checkpoints.find(nHeight);
     if (it != checkpoints.end()) {
+        if (fDebug && it->second != nStakeModifierChecksum) {
+            LogPrintf("CheckStakeModifierCheckpoints : nHeight=%d, nStakeModifierChecksum=0x%jx %llu\n", nHeight, it->second, it->second);
+        }
+        
         return it->second == nStakeModifierChecksum;
     }
 
