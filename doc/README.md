@@ -1,4 +1,4 @@
-R3V Coin Core 1.2.2
+R3V Coin Core 1.2.3
 =====================
 
 Setup
