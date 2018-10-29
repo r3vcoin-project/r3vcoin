@@ -28,12 +28,6 @@ bool CheckProofOfStake(const CTransactionRef& tx, unsigned int nBits, uint256& h
 // Check whether the coinstake timestamp meets protocol
 bool CheckCoinStakeTimestamp(int64_t nTimeBlock, int64_t nTimeTx);
 
-// Get stake modifier checksum
-unsigned int GetStakeModifierChecksum(const CBlockIndex* pindex);
-
-// Check stake modifier hard checkpoints
-bool CheckStakeModifierCheckpoints(int nHeight, uint64_t nStakeModifierChecksum);
-
 // Get time weight using supplied timestamps
 int64_t GetCoinAgeWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd);
 

@@ -165,7 +165,6 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
         result.push_back(Pair("mint", ValueFromAmount(blockindex->nMint)));
         result.push_back(Pair("entropybit", (int)blockindex->GetStakeEntropyBit()));
         result.push_back(Pair("modifier", strprintf("%x", blockindex->nStakeModifier)));
-        result.push_back(Pair("modifierchecksum", strprintf("%08x", blockindex->nStakeModifierChecksum)));
         result.push_back(Pair("signature", HexStr(block.vchBlockSig.begin(), block.vchBlockSig.end())));
     }
 
