@@ -1,4 +1,4 @@
-R3V Coin Core version 1.2.2 is now available from:
+R3V Coin Core version 1.2.3 is now available from:
 
   <https://r3v.co/>
 
