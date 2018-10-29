@@ -1823,7 +1823,7 @@ CAmount CWalletTx::GetAvailableWatchOnlyCredit(const bool& fUseCache) const
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
-    if (IsCoinBase() && GetBlocksToMaturity() > 0)
+    if ((IsCoinBase() || IsCoinStake()) && GetBlocksToMaturity() > 0)
         return 0;
 
     if (fUseCache && fAvailableWatchCreditCached)
@@ -1844,6 +1844,20 @@ CAmount CWalletTx::GetAvailableWatchOnlyCredit(const bool& fUseCache) const
     nAvailableWatchCreditCached = nCredit;
     fAvailableWatchCreditCached = true;
     return nCredit;
+}
+
+// PoSV: total watch coins staked (non-spendable until maturity)
+CAmount CWallet::GetWatchOnlyStake() const
+{
+    CAmount nTotal = 0;
+    LOCK2(cs_main, cs_wallet);
+    for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it)
+    {
+        const CWalletTx* pcoin = &(*it).second;
+        if (pcoin->IsCoinStake() && pcoin->GetBlocksToMaturity() > 0 && pcoin->GetDepthInMainChain() > 0)
+            nTotal += CWallet::GetCredit(*pcoin, ISMINE_WATCH_ONLY);
+    }
+    return nTotal;
 }
 
 CAmount CWalletTx::GetChange() const
@@ -2169,7 +2183,7 @@ CAmount CWallet::GetStake() const
     {
         const CWalletTx* pcoin = &(*it).second;
         if (pcoin->IsCoinStake() && pcoin->GetBlocksToMaturity() > 0 && pcoin->GetDepthInMainChain() > 0)
-            nTotal += CWallet::GetCredit(*pcoin, ISMINE_ALL);
+            nTotal += CWallet::GetCredit(*pcoin, ISMINE_SPENDABLE);
     }
     return nTotal;
 }

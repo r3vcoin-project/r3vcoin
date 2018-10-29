@@ -1640,6 +1640,11 @@
         <translation>Total of coins that were staked and do not yet count toward the current balance</translation>
     </message>
     <message>
+        <location line="+16"/>
+        <source>Total of coins that were staked and do not yet count toward the current balance in watch-only addresses</source>
+        <translation>Total of coins that were staked and do not yet count toward the current balance in watch-only addresses</translation>
+    </message>
+    <message>
         <location line="+41"/>
         <source>Pending:</source>
         <translation type="unfinished"></translation>

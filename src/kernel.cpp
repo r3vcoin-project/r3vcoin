@@ -21,27 +21,6 @@ typedef map<int, uint64_t> MapModifierCheckpoints;
 //unsigned int nModifierInterval = 13 * 60;
 unsigned int nModifierInterval = 300; //2.9 hours, shorter than min stake age of 3 hours
 
-// FIXME
-// Hard checkpoints of stake modifiers to ensure they are deterministic
-static map<int, uint64_t> mapStakeModifierCheckpoints/* =
-    boost::assign::map_list_of
-        (   0, 0xfd11f4e7 )
-        (   2, 0x4efe6979 )
-        (   4, 0x1bb882e0 )
-        (   8, 0xbd56d6e2 )
-        (  16, 0x7af17dd9 )
-        (  32, 0x5b3dd15c )
-        (  64, 0x08fb997a )
-        ( 128, 0x745b0e22 )
-        ( 256, 0xcd1f60e4 )*/
-    ;
-
-// Hard checkpoints of stake modifiers to ensure they are deterministic (testNet)
-static map<int, uint64_t> mapStakeModifierCheckpointsTestNet/* =
-    boost::assign::map_list_of
-        (    0, 0xfd11f4e7 )*/
-    ;
-
 // linear coin-aging function
 int64_t GetCoinAgeWeightLinear(int64_t nIntervalBeginning, int64_t nIntervalEnd)
 {
@@ -452,51 +431,6 @@ bool CheckCoinStakeTimestamp(int64_t nTimeBlock, int64_t nTimeTx)
     // v0.3 protocol
     return (nTimeBlock == nTimeTx);
 }
-
-// Get stake modifier checksum
-unsigned int GetStakeModifierChecksum(const CBlockIndex* pindex)
-{
-    assert (pindex->pprev || pindex->GetBlockHash() == (Params().GetConsensus().hashGenesisBlock));
-
-    // Hash previous checksum with flags, hashProofOfStake and nStakeModifier
-    CDataStream ss(SER_GETHASH, 0);
-    if (pindex->pprev)
-        ss << pindex->pprev->nStakeModifierChecksum;
-    ss << pindex->nFlags;
-    if (pindex->IsProofOfStake()) {
-        ss << UintToArith256(pindex->hashProof).GetCompact();
-    } else {
-        ss << 0;
-    }
-    ss << pindex->nStakeModifier;
-
-    arith_uint256 hashChecksum = UintToArith256(Hash(ss.begin(), ss.end()));
-    hashChecksum >>= (256 - 32);
-    return hashChecksum.GetLow64();
-}
-
-// Check stake modifier hard checkpoints
-bool CheckStakeModifierCheckpoints(int nHeight, uint64_t nStakeModifierChecksum)
-{
-    if (fDebug)
-        LogPrintf("CheckStakeModifierCheckpoints : nHeight=%d, nStakeModifierChecksum=0x%jx %llu\n", nHeight, nStakeModifierChecksum, nStakeModifierChecksum);
-
-    const CChainParams& chainparams = Params();
-
-    const MapModifierCheckpoints& checkpoints = chainparams.ModifierCheckpoints().mapModifierCheckpoints;
-
-    std::map<int, uint64_t>::const_iterator it = checkpoints.find(nHeight);
-    if (it != checkpoints.end()) {
-        if (fDebug && it->second != nStakeModifierChecksum) {
-            LogPrintf("CheckStakeModifierCheckpoints : nHeight=%d, nStakeModifierChecksum=0x%jx %llu\n", nHeight, it->second, it->second);
-        }
-        
-        return it->second == nStakeModifierChecksum;
-    }
-
-    return true;
-}
-
 
 // PoSV: total coin age spent in transaction, in the unit of coin-days.
 // Only those coins meeting minimum age requirement counts. As those

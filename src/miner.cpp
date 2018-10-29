@@ -806,27 +806,31 @@ void CoinStaker(CWallet *pwallet)
         {
             CValidationState state;
             if (!TestBlockValidity(state, Params(), pblocktemplate->block, chainActive.Tip(), false, false)) {
-                throw std::runtime_error(strprintf("%s: TestBlockValidity failed: %s", __func__, FormatStateMessage(state)));
-            }
-            
-            if (CheckStake(pblock, *pwallet, reservekey)) {
-                if (chainActive.Tip()->nHeight > Params().StakeMinAge() * 2) {
-                    MilliSleep(1000);
-                } else if (chainActive.Tip()->nHeight > Params().StakeMinAge()) {
-                    MilliSleep(2000);
-                } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 2) {
-                    MilliSleep(5000);
-                } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 5) {
-                    MilliSleep(10000);
-                } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 10) {
-                    MilliSleep(15000);
-                } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 20) {
-                    MilliSleep(30000);
-                } else  {
-                    MilliSleep(60000);
+                if (fDebug) {
+                    LogPrintf("CoinStaker : TestBlockValidity failed: %s\n", FormatStateMessage(state));
                 }
+                MilliSleep(6000);
+                //throw std::runtime_error(strprintf("%s: TestBlockValidity failed: %s", __func__, FormatStateMessage(state)));
             } else {
-                MilliSleep(1000);
+                if (CheckStake(pblock, *pwallet, reservekey)) {
+                    if (chainActive.Tip()->nHeight > Params().StakeMinAge() * 2) {
+                        MilliSleep(1000);
+                    } else if (chainActive.Tip()->nHeight > Params().StakeMinAge()) {
+                        MilliSleep(2000);
+                    } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 2) {
+                        MilliSleep(5000);
+                    } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 5) {
+                        MilliSleep(10000);
+                    } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 10) {
+                        MilliSleep(15000);
+                    } else if (chainActive.Tip()->nHeight > Params().StakeMinAge() / 20) {
+                        MilliSleep(30000);
+                    } else  {
+                        MilliSleep(60000);
+                    }
+                } else {
+                    MilliSleep(1000);
+                }
             }
         }
         else

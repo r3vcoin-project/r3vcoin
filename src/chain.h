@@ -182,7 +182,6 @@ public:
     int64_t nMint;
     int64_t nMoneySupply;
     uint64_t nStakeModifier; // hash modifier for proof-of-stake
-    unsigned int nStakeModifierChecksum; // checksum of index; in-memeory only
     unsigned int nStakeTime;
     uint256 hashProof;
     COutPoint prevoutStake;
@@ -251,7 +250,6 @@ public:
         nMoneySupply = 0;
         nFlags = 0;
         nStakeModifier = 0;
-        nStakeModifierChecksum = 0;
         hashProof = uint256();
         prevoutStake.SetNull();
         nStakeTime = 0;
@@ -395,11 +393,11 @@ public:
 
     std::string ToString() const
     {
-        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, nTime=%d, nMint=%s, nMoneySupply=%s, nFlags=(%s)(%d)(%s), nStakeModifier=%016x, nStakeModifierChecksum=%08x, nStakeTime=%d, hashProof=%s, prevoutStake=(%s), merkle=%s, hashBlock=%s)",
+        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, nTime=%d, nMint=%s, nMoneySupply=%s, nFlags=(%s)(%d)(%s), nStakeModifier=%016x, nStakeTime=%d, hashProof=%s, prevoutStake=(%s), merkle=%s, hashBlock=%s)",
             pprev, nHeight, nTime,
             FormatMoney(nMint), FormatMoney(nMoneySupply),
             GeneratedStakeModifier() ? "MOD" : "-", GetStakeEntropyBit(), IsProofOfStake()? "PoSV" : "PoW",
-            nStakeModifier, nStakeModifierChecksum, nStakeTime,
+            nStakeModifier, nStakeTime,
             hashProof.ToString().c_str(),
             prevoutStake.ToString().c_str(),
             hashMerkleRoot.ToString().c_str(),

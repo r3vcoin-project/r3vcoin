@@ -64,14 +64,26 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey, bool& 
     case TX_NULL_DATA:
         break;
     case TX_PUBKEY:
+    {
         keyID = CPubKey(vSolutions[0]).GetID();
+
         if (sigversion != SIGVERSION_BASE && vSolutions[0].size() != 33) {
             isInvalid = true;
             return ISMINE_NO;
         }
-        if (keystore.HaveKey(keyID))
+
+        if (keystore.HaveKey(keyID)) {
             return ISMINE_SPENDABLE;
+        } else {
+            CScript scriptPubKey2 = GetScriptForDestination(keyID);
+            if (keystore.HaveWatchOnly(scriptPubKey2)) {
+                // TODO: This could be optimized some by doing some work after the above solver
+                SignatureData sigs;
+                return ProduceSignature(DummySignatureCreator(&keystore), scriptPubKey2, sigs) ? ISMINE_WATCH_SOLVABLE : ISMINE_WATCH_UNSOLVABLE;
+            }
+        }
         break;
+    }
     case TX_WITNESS_V0_KEYHASH:
     {
         if (!keystore.HaveCScript(CScriptID(CScript() << OP_0 << vSolutions[0]))) {
@@ -152,5 +164,6 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey, bool& 
         SignatureData sigs;
         return ProduceSignature(DummySignatureCreator(&keystore), scriptPubKey, sigs) ? ISMINE_WATCH_SOLVABLE : ISMINE_WATCH_UNSOLVABLE;
     }
+    
     return ISMINE_NO;
 }

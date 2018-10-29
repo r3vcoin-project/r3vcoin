@@ -38,12 +38,6 @@ struct ChainTxData {
     double dTxRate;
 };
 
-typedef std::map<int, uint64_t> MapModifierCheckpoints;
-
-struct CModifierCheckpointData {
-    MapModifierCheckpoints mapModifierCheckpoints;
-};
-
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
  * Bitcoin system. There are three: the main network on which people trade goods
@@ -86,7 +80,6 @@ public:
     const std::vector<SeedSpec6>& FixedSeeds() const { return vFixedSeeds; }
     const CCheckpointData& Checkpoints() const { return checkpointData; }
     const ChainTxData& TxData() const { return chainTxData; }
-    const CModifierCheckpointData& ModifierCheckpoints() const { return modifierCheckpointData; }
     
     // PoSV
     const uint256& ProofOfStakeLimit() const { return bnProofOfStakeLimit; }
@@ -112,7 +105,6 @@ protected:
     bool fMineBlocksOnDemand;
     CCheckpointData checkpointData;
     ChainTxData chainTxData;
-    CModifierCheckpointData modifierCheckpointData;
     
     // PoSV
     uint256 bnProofOfStakeLimit;
